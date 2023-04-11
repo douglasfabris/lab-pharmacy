@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  overflow: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: beige;
+}
+
+ul {
+  all: unset;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+li {
+  padding: 15px
+}
+
+li:hover {
+  background-color: rgb(241, 241, 192);
+}
