@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  margin: 10px;
+  width: 300px;
+  padding: 10px;
+  border: none
+}
+
+input:required:not(:placeholder-shown):invalid {
+  border: 2px dashed red;
+}
