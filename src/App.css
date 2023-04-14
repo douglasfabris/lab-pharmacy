@@ -20,7 +20,7 @@ html, body {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
   margin: auto;
 }
@@ -33,6 +33,7 @@ button {
   font-size: 16px;
   padding: 10px 20px;
   transition-duration: 0.4s;
+  margin: 10px;
 }
 
 button:hover {

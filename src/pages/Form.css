@@ -5,6 +5,17 @@
   align-items: center;
 }
 
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+textarea{
+  margin: 5px 15px 15px 0;
+  border: none;
+  padding: 10px;
+}
+
 input {
   margin: 10px;
   width: 300px;
@@ -12,6 +23,29 @@ input {
   border: none
 }
 
+select {
+  margin: 5px 15px 15px 0;
+  padding: 5px;
+}
+
 input:required:not(:placeholder-shown):invalid {
   border: 2px dashed red;
+}
+
+.linha {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-grid input {
+  width: auto;
+  margin: 5px 15px 15px 0;
+}
+
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  flex-basis: 50%;
 }
