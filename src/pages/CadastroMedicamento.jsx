@@ -18,10 +18,13 @@ function CadastroMedicamento() {
   console.log(medicamento);
   function handleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem(
-      `med.${medicamento.nome}`,
-      JSON.stringify(medicamento)
-    );
+    fetch("http://localhost:3000/medicamentos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(medicamento)
+    })
     setModalIsOpen(true);
     Object.keys(medicamento).forEach((v) => {
       medicamento[v] = "";

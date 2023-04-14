@@ -43,10 +43,13 @@ function CadastroFarmacia() {
 
   function HandleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem(
-      `far.${farmacia.razaoSocial}`,
-      JSON.stringify(farmacia)
-    );
+    fetch("http://localhost:3000/farmacias", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(farmacia)
+    })
     setModalIsOpen(true);
     Object.keys(farmacia).forEach((v) => {
       farmacia[v] = "";
