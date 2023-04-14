@@ -24,33 +24,40 @@ function CadastroFarmacia() {
     longitude: "",
   });
 
-function pesquisaCep(e) {
+  function pesquisaCep(e) {
     if (!e.target.value) return;
     const cep = e.target.value.replace(/\D/, "");
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
       .then((res) => (!res.ok ? console.log("CEP invalido") : res.json()))
-      .then((data) => setFarmacia({
-        ...farmacia,
-        cidade: data.localidade,
-        bairro: data.bairro,
-        logradouro: data.logradouro,
-        estado: data.uf,
-      }))
+      .then((data) =>
+        setFarmacia({
+          ...farmacia,
+          cidade: data.localidade,
+          bairro: data.bairro,
+          logradouro: data.logradouro,
+          estado: data.uf,
+        })
+      )
       .catch((error) => console.log(error));
   }
 
   function HandleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem(farmacia.razaoSocial, JSON.stringify(farmacia));
+    localStorage.setItem(
+      `far.${farmacia.razaoSocial}`,
+      JSON.stringify(farmacia)
+    );
     setModalIsOpen(true);
-    Object.keys(farmacia).forEach(v => {farmacia[v] = ""})
+    Object.keys(farmacia).forEach((v) => {
+      farmacia[v] = "";
+    });
   }
 
   return (
     <div>
-      <HeaderMain/>
+      <HeaderMain />
       <div className="container">
-        <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen}/>
+        <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de nova farmácia</h2>
         <form onSubmit={HandleSubmit}>
           <fieldset className="form-grid">

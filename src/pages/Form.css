@@ -10,11 +10,22 @@
   flex-wrap: wrap;
 }
 
+textarea{
+  margin: 5px 15px 15px 0;
+  border: none;
+  padding: 10px;
+}
+
 input {
   margin: 10px;
   width: 300px;
   padding: 10px;
   border: none
+}
+
+select {
+  margin: 5px 15px 15px 0;
+  padding: 5px;
 }
 
 input:required:not(:placeholder-shown):invalid {

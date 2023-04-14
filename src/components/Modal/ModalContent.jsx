@@ -4,7 +4,7 @@ function ModalContent({ onClose }) {
   return ( 
     <div className="modal">
       <div className="modal-content">
-        Farmácia cadastrada com sucesso
+        Cadastro realizado com sucesso
         <button type="button" onClick={onClose}>Fechar</button>
       </div>
   </div>
