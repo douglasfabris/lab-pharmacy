@@ -46,6 +46,15 @@
       "preco": "12,00",
       "tipo": "comum",
       "id": 1
+    },
+    {
+      "nome": "Ibuprofeno",
+      "laboratorio": "CIMED",
+      "dosagem": "600 mg",
+      "descricao": "Descrição genérica para tentar causar o overflow do card. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis dignissim neque, tristique elementum enim. Maecenas varius diam sapien, in.Cras vel mi nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris fermentum.",
+      "preco": "7,50",
+      "tipo": "comum",
+      "id": 2
     }
   ]
 }

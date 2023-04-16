@@ -3,6 +3,7 @@ import App from "./App";
 import Mapa from "./pages/Mapa"
 import CadastroFarmacia from "./pages/CadastroFarmacia";
 import CadastroMedicamento from "./pages/CadastroMedicamento";
+import ListaMedicamentos from "./pages/ListaMedicamentos";
 
 const AppRouter = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const AppRouter = createBrowserRouter([
   {
     path: "/cadastro-medicamento",
     element: <CadastroMedicamento />
+  },
+  {
+    path: "/lista-medicamentos",
+    element: <ListaMedicamentos />
   }
 ]);
 
