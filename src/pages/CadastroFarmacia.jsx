@@ -84,7 +84,7 @@ function HandleSubmit(e) {
         <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de nova farmácia</h2>
         <form onSubmit={(e) => HandleSubmit(e)}>
-          <fieldset className="form-grid">
+          <fieldset className="form-row">
             <legend>Informações de contato</legend>
             <label htmlFor="razaoSocial">
               Razão social*
@@ -167,7 +167,7 @@ function HandleSubmit(e) {
 
           <hr />
 
-          <fieldset className="form-grid">
+          <fieldset className="form-row">
             <legend>Localização</legend>
             <label htmlFor="cep" style={{ flexBasis: "25%" }}>
               CEP

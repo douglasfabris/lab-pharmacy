@@ -55,6 +55,15 @@
       "preco": "7,50",
       "tipo": "comum",
       "id": 2
+    },
+    {
+      "nome": "Paracetamol",
+      "laboratorio": "CIMED",
+      "dosagem": "500 mg",
+      "descricao": "",
+      "preco": "5,72",
+      "tipo": "comum",
+      "id": 3
     }
   ]
 }

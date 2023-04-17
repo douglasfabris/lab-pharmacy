@@ -20,6 +20,7 @@ function LoginPage() {
           Senha
           <input type="password" placeholder="Digite sua senha" minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="senha" required/>
         </label>
+        <p style={{color: "red"}}>A senha deve possuir 8 caracteres contendo letras e números</p>
         <button type="submit">Login</button>
       </form>
     </div>

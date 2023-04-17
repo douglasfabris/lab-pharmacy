@@ -38,7 +38,7 @@ function CadastroMedicamento() {
         <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de novo medicamento</h2>
         <form onSubmit={handleSubmit}>
-          <fieldset className="form-grid">
+          <fieldset className="form-row">
             <legend>Informações do medicamento</legend>
             <label htmlFor="nome">
               Nome do medicamento

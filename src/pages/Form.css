@@ -1,13 +1,19 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.form-grid {
+.form-row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.form-row input {
+  width: auto;
+  margin: 5px 15px 15px 0;
+}
+
+
+.form-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  flex-basis: 50%;
 }
 
 textarea{
@@ -35,17 +41,4 @@ input:required:not(:placeholder-shown):invalid {
 .linha {
   display: flex;
   flex-direction: row;
-}
-
-.form-grid input {
-  width: auto;
-  margin: 5px 15px 15px 0;
-}
-
-
-.form-grid label {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  flex-basis: 50%;
 }

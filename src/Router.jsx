@@ -1,14 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Mapa from "./pages/Mapa"
+import Mapa from "./pages/MapaFarmacias"
 import CadastroFarmacia from "./pages/CadastroFarmacia";
 import CadastroMedicamento from "./pages/CadastroMedicamento";
 import ListaMedicamentos from "./pages/ListaMedicamentos";
+import ErrorPage from "./pages/ErrorPage";
 
 const AppRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />
   },
   {
     path: "/mapa",

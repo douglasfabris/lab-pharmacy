@@ -3,12 +3,15 @@
   align-items: center;
 }
 
-h2 {
-  text-align: center;
-}
-
 .leaflet-container {
   width: 700px;
   height: 450px;
   margin: 20px auto;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  line-height: 1;
+  font-size: 1em;
+  height: 250px;
+  overflow: auto;
 }

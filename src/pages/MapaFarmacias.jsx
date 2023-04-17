@@ -5,7 +5,6 @@ import "./Mapa-style.css";
 import FarmaciaPopup from "../components/FarmaciaPopup";
 
 function Mapa() {
-  const [farmaciaAtiva, setfarmaciaAtiva] = useState(null);
   const [listaFarmacias, setListaFarmacias] = useState([]);
 
   useEffect(() => {
@@ -14,7 +13,6 @@ function Mapa() {
       .then((data) => setListaFarmacias(data));
   }, []);
 
-  console.log(listaFarmacias);
   return (
     <div>
       <HeaderMain />
@@ -33,9 +31,6 @@ function Mapa() {
             <Marker
               key={farmacia.id}
               position={[farmacia.latitude, farmacia.longitude]}
-              onClick={() => {
-                setfarmaciaAtiva(farmacia);
-              }}
             >
               <Popup>
                 <FarmaciaPopup farmacia={farmacia}/>
