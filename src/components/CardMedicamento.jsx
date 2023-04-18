@@ -1,6 +1,7 @@
+import { useState } from "react";
 import "./CardMedicamentoStyle.css"
 import caixaMedicamento from "../assets/caixa-remedio.png"
-import { useState } from "react";
+
 
 function CardMedicamento( {medicamento} ) {
   const [flip, setFlip] = useState(false)
@@ -13,7 +14,7 @@ function CardMedicamento( {medicamento} ) {
         <p className="item">{medicamento.laboratorio}</p>
       </div>
       <div className="back" onClick={() => setFlip(!flip)}>
-        <p className="item"><b>Preço: </b>{medicamento.preco}</p>
+        <p className="item"><b>Preço: </b>R$ {medicamento.preco}</p>
         <p className="item"><b>Tipo:</b> {medicamento.tipo}</p>
         {medicamento.descricao && <p className="item"><b>Descrição:</b> {medicamento.descricao}</p>}
       </div>

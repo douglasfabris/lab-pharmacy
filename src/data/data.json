@@ -64,6 +64,15 @@
       "preco": "5,72",
       "tipo": "comum",
       "id": 3
+    },
+    {
+      "nome": "Naratriptana",
+      "laboratorio": "Eurofarma",
+      "dosagem": "2,5 mg",
+      "descricao": "",
+      "preco": "40,00",
+      "tipo": "comum",
+      "id": 4
     }
   ]
 }

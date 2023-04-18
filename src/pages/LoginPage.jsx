@@ -1,5 +1,6 @@
 import "./Form.css"
 import { useNavigate } from "react-router-dom";
+import logoExtenso from "../assets/logo_extenso.png"
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -11,6 +12,7 @@ function LoginPage() {
   return ( 
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
+        <img src={logoExtenso} alt="logo" width={400}/>
         <h2>Faça seu login</h2>
         <label htmlFor="email">
           E-mail

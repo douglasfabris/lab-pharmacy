@@ -5,13 +5,14 @@ html, body {
   font-size: 100%;
   font-family: Helvetica, Arial, sans-serif;
   vertical-align: baseline;
-  background-color: #E7F2F8;
+  background-color: #DEEFE7;
   height: 100vh;
+  color: #002333;
 }
 
 h2 {
   text-align: center;
-  color: #FFA384;
+  color: #159A9C;
 }
 
 #root {
@@ -31,7 +32,7 @@ h2 {
 }
 
 button {
-  background-color: #74BDCB;
+  background-color: #159A9C;
   color: white;
   border: none;
   border-radius: 8px;
@@ -42,7 +43,7 @@ button {
 }
 
 button:hover {
-  background-color: #62a9b7;
+  background-color: #118183;
 }
 
 .grid {

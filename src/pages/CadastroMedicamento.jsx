@@ -41,11 +41,12 @@ function CadastroMedicamento() {
           <fieldset className="form-row">
             <legend>Informações do medicamento</legend>
             <label htmlFor="nome">
-              Nome do medicamento
+              Nome do medicamento*
               <input
                 type="text"
                 id="nome"
                 value={medicamento.nome}
+                placeholder="Nome"
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, nome: e.target.value })
                 }
@@ -53,10 +54,11 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="laboratorio">
-              Nome do laboratório
+              Nome do laboratório*
               <input
                 type="text"
                 id="laboratorio"
+                placeholder="Laboratório"
                 value={medicamento.laboratorio}
                 onChange={(e) =>
                   setMedicamento({
@@ -68,10 +70,11 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="dosagem">
-              Dosagem
+              Dosagem*
               <input
                 type="text"
                 id="dosagem"
+                placeholder="Dosagem por dose"
                 value={medicamento.dosagem}
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, dosagem: e.target.value })
@@ -80,10 +83,11 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="preco">
-              Preço unitário
+              Preço unitário*
               <input
                 type="text"
                 id="preco"
+                placeholder="Valor em R$"
                 value={medicamento.preco}
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, preco: e.target.value })
@@ -92,7 +96,7 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="tipo">
-              Tipo de medicamento
+              Tipo de medicamento*
               <select
                 name="tipo"
                 onChange={(e) =>
@@ -120,6 +124,7 @@ function CadastroMedicamento() {
               />
             </label>
           </fieldset>
+          <p style={{color: "red", fontSize: "12px"}}>*Campos obrigatórios</p>
           <button type="submit">Cadastrar</button>
         </form>
       </div>

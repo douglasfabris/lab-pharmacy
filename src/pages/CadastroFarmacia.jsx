@@ -100,7 +100,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="cnpj">
-              CNPJ
+              CNPJ*
               <InputMask
                 mask="99.999.999/9999-99"
                 id="cnpj"
@@ -113,7 +113,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="fantasia">
-              Nome fantasia
+              Nome fantasia*
               <input
                 type="text"
                 id="fantasia"
@@ -126,7 +126,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="email">
-              E-mail
+              E-mail*
               <input
                 type="email"
                 id="email"
@@ -151,7 +151,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="celular">
-              Celular
+              Celular*
               <InputMask
                 mask="(99) 99999-9999"
                 id="celular"
@@ -170,7 +170,7 @@ function HandleSubmit(e) {
           <fieldset className="form-row">
             <legend>Localização</legend>
             <label htmlFor="cep" style={{ flexBasis: "25%" }}>
-              CEP
+              CEP*
               <InputMask
                 mask="99999-999"
                 id="cep"
@@ -184,7 +184,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="endereco">
-              Endereço
+              Endereço*
               <input
                 type="text"
                 id="endereco"
@@ -197,7 +197,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="numero" style={{ flexBasis: "25%" }}>
-              Número
+              Número*
               <input
                 type="number"
                 id="numero"
@@ -210,7 +210,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="bairro">
-              Bairro
+              Bairro*
               <input
                 type="text"
                 id="bairro"
@@ -223,7 +223,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="cidade">
-              Cidade
+              Cidade*
               <input
                 type="text"
                 id="cidade"
@@ -236,7 +236,7 @@ function HandleSubmit(e) {
               />
             </label>
             <label htmlFor="estado">
-              Estado
+              Estado*
               <input
                 type="text"
                 id="estado"
@@ -260,31 +260,8 @@ function HandleSubmit(e) {
                 }
               />
             </label>
-            {/* <label htmlFor="latitude" style={{ flexBasis: "25%" }}>
-              Latitude
-              <input
-                type="text"
-                id="latitude"
-                placeholder="Latitude"
-                value={farmacia.latitude}
-                onChange={(e) =>
-                  setFarmacia({ ...farmacia, latitude: e.target.value })
-                }
-              />
-            </label>
-            <label htmlFor="longitude" style={{ flexBasis: "25%" }}>
-              Longitude
-              <input
-                type="text"
-                id="longitude"
-                placeholder="Longitude"
-                value={farmacia.longitude}
-                onChange={(e) =>
-                  setFarmacia({ ...farmacia, longitude: e.target.value })
-                }
-              />
-            </label> */}
           </fieldset>
+          <p style={{color: "red", fontSize: "12px"}}>*Campos obrigatórios</p>
           <button type="submit">Cadastrar</button>
         </form>
       </div>

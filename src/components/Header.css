@@ -4,7 +4,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
-  background-color: #74BDCB;
+  background-color: #159A9C;
+  color: #FFFFFF;
 }
 
 ul {
@@ -21,5 +22,9 @@ li {
 }
 
 li:hover {
-  background-color: #62a9b7;
+  background-color: rgb(0, 76, 112);
+}
+
+img {
+  margin: 5px;
 }
