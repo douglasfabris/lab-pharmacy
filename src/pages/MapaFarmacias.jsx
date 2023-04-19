@@ -1,11 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import HeaderMain from "../components/HeaderMain";
 import "./Mapa-style.css";
 import FarmaciaPopup from "../components/FarmaciaPopup";
+import { LoginContext } from "../context/LoginContext";
+import { useNavigate } from "react-router-dom";
 
 function Mapa() {
+
   const [listaFarmacias, setListaFarmacias] = useState([]);
+  const {isLogged, setIsLogged} = useContext(LoginContext);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isLogged) {
+      return navigate("/")
+    }
+  }, [])
 
   useEffect(() => {
     fetch("http://localhost:3000/farmacias")
@@ -15,9 +25,8 @@ function Mapa() {
 
   return (
     <div>
-      <HeaderMain />
+      <h2>Mapa das farmácias cadastradas</h2>
       <div className="container mapa">
-        <h2>Mapa das farmácias cadastradas</h2>
         <MapContainer
           center={[-27.5935, -48.55854]}
           zoom={12}

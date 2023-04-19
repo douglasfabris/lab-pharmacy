@@ -1,8 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
+import { LoginProvider } from "./context/LoginContext";
 import appRouter from "./Router";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={appRouter} />
+  <LoginProvider>
+    <RouterProvider router={appRouter} />
+  </LoginProvider>
 );

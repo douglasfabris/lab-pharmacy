@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import InputMask from "react-input-mask";
 import HeaderMain from "../components/HeaderMain";
 import Modal from "../components/Modal/Modal";
 import "./Form.css";
+import { LoginContext } from "../context/LoginContext";
+import { useNavigate } from "react-router-dom";
 
 function CadastroMedicamento() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -14,8 +16,15 @@ function CadastroMedicamento() {
     preco: "",
     tipo: "",
   });
+  const {isLogged, setIsLogged} = useContext(LoginContext);
+  const navigate = useNavigate()
 
-  console.log(medicamento);
+  useEffect(() => {
+    if (!isLogged) {
+      return navigate("/")
+    }
+  }, [])
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:3000/medicamentos", {
@@ -33,7 +42,6 @@ function CadastroMedicamento() {
 
   return (
     <div>
-      <HeaderMain />
       <div className="container">
         <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de novo medicamento</h2>

@@ -1,14 +1,15 @@
 .mapa {
   display: block;
   align-items: center;
+  position: relative;
   width: 800px;
-  height: 550px;
+  height: 500px;
 }
 
 .leaflet-container {
+  position: relative;
   width: 100%;
-  height: 100%;
-  margin: 20px auto;
+  height: inherit;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content {

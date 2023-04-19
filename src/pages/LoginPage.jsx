@@ -1,11 +1,15 @@
 import "./Form.css"
 import { useNavigate } from "react-router-dom";
 import logoExtenso from "../assets/logo_extenso.png"
+import { useContext } from "react";
+import { LoginContext } from "../context/LoginContext";
 
 function LoginPage() {
   const navigate = useNavigate()
+  const {isLogged, setIsLogged} = useContext(LoginContext)
   function handleSubmit(e) {
     e.preventDefault()
+    setIsLogged(true)
     return navigate("/mapa")
   }
 

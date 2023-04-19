@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import InputMask from "react-input-mask";
 import HeaderMain from "../components/HeaderMain";
 import Modal from "../components/Modal/Modal";
 import "./Form.css";
+import { LoginContext } from "../context/LoginContext";
+import { useNavigate } from "react-router-dom";
 
 function CadastroFarmacia() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -24,6 +26,14 @@ function CadastroFarmacia() {
     latitude: "",
     longitude: "",
   });
+  const {isLogged, setIsLogged} = useContext(LoginContext);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isLogged) {
+      return navigate("/")
+    }
+  }, [])
 
   useEffect(() => {
     if (submit) {
@@ -79,7 +89,6 @@ function HandleSubmit(e) {
 
   return (
     <div>
-      <HeaderMain />
       <div className="container">
         <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de nova farmácia</h2>

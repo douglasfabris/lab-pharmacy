@@ -1,10 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import HeaderMain from "../components/HeaderMain";
 import CardMedicamento from "../components/CardMedicamento";
+import { LoginContext } from "../context/LoginContext";
+import { useNavigate } from "react-router-dom";
 
 function ListaMedicamentos() {
   const [listaMedicamentos, setListaMedicamentos] = useState([]);
   const [barraPesquisa, setBarraPesquisa] = useState("");
+  const {isLogged, setIsLogged} = useContext(LoginContext);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isLogged) {
+      return navigate("/")
+    }
+  }, [])
 
   useEffect(() => {
     fetch("http://localhost:3000/medicamentos")
@@ -21,7 +31,6 @@ function ListaMedicamentos() {
 
   return (
     <div>
-      <HeaderMain />
       <div className="container">
         <h2>Lista de medicamentos</h2>
         <label htmlFor="barraPesquisa">
