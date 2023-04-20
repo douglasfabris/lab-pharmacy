@@ -1,18 +1,19 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font-family: Helvetica, Arial, sans-serif;
   vertical-align: baseline;
-  background-color: #DEEFE7;
+  background-color: #deefe7;
   height: 100vh;
   color: #002333;
 }
 
 h2 {
   text-align: center;
-  color: #159A9C;
+  color: #159a9c;
 }
 
 #root {
@@ -40,7 +41,7 @@ h2 {
 }
 
 button {
-  background-color: #159A9C;
+  background-color: #159a9c;
   color: white;
   border: none;
   border-radius: 8px;

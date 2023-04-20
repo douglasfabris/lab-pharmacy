@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react";
-import InputMask from "react-input-mask";
-import HeaderMain from "../components/HeaderMain";
-import Modal from "../components/Modal/Modal";
-import "./Form.css";
-import { LoginContext } from "../context/LoginContext";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react"
+import InputMask from "react-input-mask"
+import HeaderMain from "../components/HeaderMain"
+import Modal from "../components/Modal/Modal"
+import "./Form.css"
+import { LoginContext } from "../context/LoginContext"
+import { useNavigate } from "react-router-dom"
 
 function CadastroMedicamento() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [medicamento, setMedicamento] = useState({
     nome: "",
     laboratorio: "",
@@ -15,8 +15,8 @@ function CadastroMedicamento() {
     descricao: "",
     preco: "",
     tipo: "",
-  });
-  const {isLogged, setIsLogged} = useContext(LoginContext);
+  })
+  const { isLogged, setIsLogged } = useContext(LoginContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -26,18 +26,18 @@ function CadastroMedicamento() {
   }, [])
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     fetch("http://localhost:3000/medicamentos", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(medicamento)
+      body: JSON.stringify(medicamento),
     })
-    setModalIsOpen(true);
+    setModalIsOpen(true)
     Object.keys(medicamento).forEach((v) => {
-      medicamento[v] = "";
-    });
+      medicamento[v] = ""
+    })
   }
 
   return (
@@ -95,7 +95,8 @@ function CadastroMedicamento() {
               <input
                 type="text"
                 id="preco"
-                placeholder="Valor em R$"
+                placeholder="Valor em R$ 0,00"
+                pattern="^\d+[,]\d{2}$"
                 value={medicamento.preco}
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, preco: e.target.value })
@@ -132,12 +133,12 @@ function CadastroMedicamento() {
               />
             </label>
           </fieldset>
-          <p style={{color: "red", fontSize: "12px"}}>*Campos obrigatórios</p>
+          <p style={{ color: "red", fontSize: "12px" }}>*Campos obrigatórios</p>
           <button type="submit">Cadastrar</button>
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default CadastroMedicamento;
+export default CadastroMedicamento

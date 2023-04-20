@@ -1,11 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
+import { createBrowserRouter } from "react-router-dom"
+import App from "./App"
 import Mapa from "./pages/MapaFarmacias"
-import CadastroFarmacia from "./pages/CadastroFarmacia";
-import CadastroMedicamento from "./pages/CadastroMedicamento";
-import ListaMedicamentos from "./pages/ListaMedicamentos";
-import ErrorPage from "./pages/ErrorPage";
-import LoginPage from "./pages/LoginPage";
+import CadastroFarmacia from "./pages/CadastroFarmacia"
+import CadastroMedicamento from "./pages/CadastroMedicamento"
+import ListaMedicamentos from "./pages/ListaMedicamentos"
+import ErrorPage from "./pages/ErrorPage"
+import LoginPage from "./pages/LoginPage"
+import CadastroUsuario from "./pages/CadastroUsuario"
 
 const AppRouter = createBrowserRouter([
   {
@@ -15,26 +16,30 @@ const AppRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LoginPage />
+        element: <LoginPage />,
+      },
+      {
+        path: "/cadastro-usuario",
+        element: <CadastroUsuario />,
       },
       {
         path: "/mapa",
-        element: <Mapa />
+        element: <Mapa />,
       },
       {
         path: "/cadastro-farmacia",
-        element: <CadastroFarmacia />
+        element: <CadastroFarmacia />,
       },
       {
         path: "/cadastro-medicamento",
-        element: <CadastroMedicamento />
+        element: <CadastroMedicamento />,
       },
       {
         path: "/lista-medicamentos",
-        element: <ListaMedicamentos />
-      }
-    ]
-  }
-]);
+        element: <ListaMedicamentos />,
+      },
+    ],
+  },
+])
 
-export default AppRouter;
+export default AppRouter

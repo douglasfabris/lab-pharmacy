@@ -1,14 +1,13 @@
-import { useContext, useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "./Mapa-style.css";
-import FarmaciaPopup from "../components/FarmaciaPopup";
-import { LoginContext } from "../context/LoginContext";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import "./Mapa-style.css"
+import FarmaciaPopup from "../components/FarmaciaPopup"
+import { LoginContext } from "../context/LoginContext"
+import { useNavigate } from "react-router-dom"
 
 function Mapa() {
-
-  const [listaFarmacias, setListaFarmacias] = useState([]);
-  const {isLogged, setIsLogged} = useContext(LoginContext);
+  const [listaFarmacias, setListaFarmacias] = useState([])
+  const { isLogged, setIsLogged } = useContext(LoginContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -20,11 +19,11 @@ function Mapa() {
   useEffect(() => {
     fetch("http://localhost:3000/farmacias")
       .then((res) => res.json())
-      .then((data) => setListaFarmacias(data));
-  }, []);
+      .then((data) => setListaFarmacias(data))
+  }, [])
 
   return (
-    <div>
+    <div className="container">
       <h2>Mapa das farmácias cadastradas</h2>
       <div className="container mapa">
         <MapContainer
@@ -42,14 +41,14 @@ function Mapa() {
               position={[farmacia.latitude, farmacia.longitude]}
             >
               <Popup>
-                <FarmaciaPopup farmacia={farmacia}/>
+                <FarmaciaPopup farmacia={farmacia} />
               </Popup>
             </Marker>
           ))}
         </MapContainer>
       </div>
     </div>
-  );
+  )
 }
 
-export default Mapa;
+export default Mapa

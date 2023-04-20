@@ -3,7 +3,7 @@ nav {
   overflow: auto;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 0 10px;
   background-color: #159A9C;
   color: #FFFFFF;
 }
@@ -18,7 +18,7 @@ ul {
 }
 
 li {
-  padding: 15px
+  padding: 10px
 }
 
 li:hover {

@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import "./FooterStyle.css"
-import { LoginContext } from "../context/LoginContext";
+import { LoginContext } from "../context/LoginContext"
 
-function Footer () {
-  const {isLogged, setIsLogged} = useContext(LoginContext)
+function Footer() {
+  const { isLogged, setIsLogged } = useContext(LoginContext)
   const navigate = useNavigate()
 
   function handleLogout() {
@@ -12,12 +12,21 @@ function Footer () {
     navigate("/")
   }
 
-  return ( 
+  return (
     <footer>
       LABPharmacy Inc
-      {isLogged ? <span style={{float: "right"}} onClick={handleLogout}>Logout</span> : ""}
+      {isLogged ? (
+        <span
+          style={{ float: "right", cursor: "pointer" }}
+          onClick={handleLogout}
+        >
+          Logout
+        </span>
+      ) : (
+        ""
+      )}
     </footer>
-   );
+  )
 }
 
-export default Footer ;
+export default Footer
