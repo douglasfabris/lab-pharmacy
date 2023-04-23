@@ -1,11 +1,13 @@
-import { useState } from "react";
-import InputMask from "react-input-mask";
-import HeaderMain from "../components/HeaderMain";
-import Modal from "../components/Modal/Modal";
-import "./Form.css";
+import { useContext, useEffect, useState } from "react"
+import InputMask from "react-input-mask"
+import HeaderMain from "../components/HeaderMain"
+import Modal from "../components/Modal/Modal"
+import "./Form.css"
+import { LoginContext } from "../context/LoginContext"
+import { useNavigate } from "react-router-dom"
 
 function CadastroMedicamento() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [medicamento, setMedicamento] = useState({
     nome: "",
     laboratorio: "",
@@ -13,39 +15,46 @@ function CadastroMedicamento() {
     descricao: "",
     preco: "",
     tipo: "",
-  });
+  })
+  const { isLogged, setIsLogged } = useContext(LoginContext)
+  const navigate = useNavigate()
 
-  console.log(medicamento);
+  useEffect(() => {
+    if (!isLogged) {
+      return navigate("/")
+    }
+  }, [])
+
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     fetch("http://localhost:3000/medicamentos", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(medicamento)
+      body: JSON.stringify(medicamento),
     })
-    setModalIsOpen(true);
+    setModalIsOpen(true)
     Object.keys(medicamento).forEach((v) => {
-      medicamento[v] = "";
-    });
+      medicamento[v] = ""
+    })
   }
 
   return (
     <div>
-      <HeaderMain />
       <div className="container">
         <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de novo medicamento</h2>
         <form onSubmit={handleSubmit}>
-          <fieldset className="form-grid">
+          <fieldset className="form-row">
             <legend>Informações do medicamento</legend>
             <label htmlFor="nome">
-              Nome do medicamento
+              Nome do medicamento*
               <input
                 type="text"
                 id="nome"
                 value={medicamento.nome}
+                placeholder="Nome"
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, nome: e.target.value })
                 }
@@ -53,10 +62,11 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="laboratorio">
-              Nome do laboratório
+              Nome do laboratório*
               <input
                 type="text"
                 id="laboratorio"
+                placeholder="Laboratório"
                 value={medicamento.laboratorio}
                 onChange={(e) =>
                   setMedicamento({
@@ -68,10 +78,11 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="dosagem">
-              Dosagem
+              Dosagem*
               <input
                 type="text"
                 id="dosagem"
+                placeholder="Dosagem por dose"
                 value={medicamento.dosagem}
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, dosagem: e.target.value })
@@ -80,10 +91,12 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="preco">
-              Preço unitário
+              Preço unitário*
               <input
                 type="text"
                 id="preco"
+                placeholder="Valor em R$ 0,00"
+                pattern="^\d+[,]\d{2}$"
                 value={medicamento.preco}
                 onChange={(e) =>
                   setMedicamento({ ...medicamento, preco: e.target.value })
@@ -92,7 +105,7 @@ function CadastroMedicamento() {
               />
             </label>
             <label htmlFor="tipo">
-              Tipo de medicamento
+              Tipo de medicamento*
               <select
                 name="tipo"
                 onChange={(e) =>
@@ -120,11 +133,12 @@ function CadastroMedicamento() {
               />
             </label>
           </fieldset>
+          <p style={{ color: "red", fontSize: "12px" }}>*Campos obrigatórios</p>
           <button type="submit">Cadastrar</button>
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default CadastroMedicamento;
+export default CadastroMedicamento

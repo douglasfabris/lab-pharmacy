@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-  background-color: rgba(248, 231, 217, 0.937);
+  background-color: #bbdece;
   border-radius: 5px;
   transform-style: preserve-3d;
   transition: 200ms;

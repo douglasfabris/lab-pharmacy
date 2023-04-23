@@ -35,6 +35,24 @@
       "latitude": "-27.604957",
       "longitude": "-48.5477507",
       "id": 2
+    },
+    {
+      "razaoSocial": "Farmacia União",
+      "cnpj": "34.232.342/3424-32",
+      "fantasia": "Farmacia São João",
+      "email": "farmacia@saojoao.com",
+      "telefone": "",
+      "celular": "(43) 33241-2341",
+      "cep": "88025-500",
+      "logradouro": "Rua Delminda Silveira",
+      "numero": "580",
+      "bairro": "Agronômica",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "",
+      "latitude": "-27.5756981",
+      "longitude": "-48.5303702",
+      "id": 3
     }
   ],
   "medicamentos": [
@@ -54,6 +72,45 @@
       "descricao": "Descrição genérica para tentar causar o overflow do card. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis dignissim neque, tristique elementum enim. Maecenas varius diam sapien, in.Cras vel mi nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris fermentum.",
       "preco": "7,50",
       "tipo": "comum",
+      "id": 2
+    },
+    {
+      "nome": "Paracetamol",
+      "laboratorio": "CIMED",
+      "dosagem": "500 mg",
+      "descricao": "",
+      "preco": "5,72",
+      "tipo": "comum",
+      "id": 3
+    },
+    {
+      "nome": "Naratriptana",
+      "laboratorio": "Eurofarma",
+      "dosagem": "2,5 mg",
+      "descricao": "",
+      "preco": "40,00",
+      "tipo": "comum",
+      "id": 4
+    },
+    {
+      "nome": "Loratadina",
+      "laboratorio": "Cimed",
+      "dosagem": "10mg",
+      "descricao": "",
+      "preco": "7,52",
+      "tipo": "comum",
+      "id": 5
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "senha@senha",
+      "senha": "asdasd24124",
+      "id": 1
+    },
+    {
+      "email": "admin@admin",
+      "senha": "admin1234",
       "id": 2
     }
   ]

@@ -1,25 +1,31 @@
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import HeaderMain from "../components/HeaderMain";
-import "./Mapa-style.css";
-import FarmaciaPopup from "../components/FarmaciaPopup";
+import { useContext, useEffect, useState } from "react"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { useNavigate } from "react-router-dom"
+import "./Mapa-style.css"
+import FarmaciaPopup from "../components/FarmaciaPopup"
+import { LoginContext } from "../context/LoginContext"
 
 function Mapa() {
-  const [farmaciaAtiva, setfarmaciaAtiva] = useState(null);
-  const [listaFarmacias, setListaFarmacias] = useState([]);
+  const [listaFarmacias, setListaFarmacias] = useState([])
+  const { isLogged, setIsLogged } = useContext(LoginContext)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isLogged) {
+      return navigate("/")
+    }
+  }, [])
 
   useEffect(() => {
     fetch("http://localhost:3000/farmacias")
       .then((res) => res.json())
-      .then((data) => setListaFarmacias(data));
-  }, []);
+      .then((data) => setListaFarmacias(data))
+  }, [])
 
-  console.log(listaFarmacias);
   return (
-    <div>
-      <HeaderMain />
+    <div className="container">
+      <h2>Mapa das farmácias cadastradas</h2>
       <div className="container mapa">
-        <h2>Mapa das farmácias cadastradas</h2>
         <MapContainer
           center={[-27.5935, -48.55854]}
           zoom={12}
@@ -33,19 +39,16 @@ function Mapa() {
             <Marker
               key={farmacia.id}
               position={[farmacia.latitude, farmacia.longitude]}
-              onClick={() => {
-                setfarmaciaAtiva(farmacia);
-              }}
             >
               <Popup>
-                <FarmaciaPopup farmacia={farmacia}/>
+                <FarmaciaPopup farmacia={farmacia} />
               </Popup>
             </Marker>
           ))}
         </MapContainer>
       </div>
     </div>
-  );
+  )
 }
 
-export default Mapa;
+export default Mapa

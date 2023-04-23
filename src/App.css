@@ -1,16 +1,25 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font-family: Helvetica, Arial, sans-serif;
   vertical-align: baseline;
-  background-color: rgb(255, 249, 243);
+  background-color: #deefe7;
   height: 100vh;
+  color: #002333;
+}
+
+h2 {
+  text-align: center;
+  color: #159a9c;
 }
 
 #root {
-  height: inherit;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
@@ -19,14 +28,20 @@ html, body {
   flex-direction: column;
 }
 
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 button {
-  background-color: rgb(215, 164, 87);
+  background-color: #159a9c;
   color: white;
   border: none;
   border-radius: 8px;
@@ -37,11 +52,12 @@ button {
 }
 
 button:hover {
-  background-color: rgb(181, 137, 72);
+  background-color: #118183;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-items: center;
+  gap: 10px;
 }
