@@ -2,7 +2,7 @@
 
 Este repositório contem o projeto de desenvolvimento de um sistema para a empresa LabPharmacy Ink. chamado Pharmacy Central System. Esse sistema conta com com uma tela de login e cadastro de usuário (utilizando um sistema de autenticação simples por json-server, sem criptografia), uma página de cadastro de farmácias, uma página com um mapa para visualizar as farmácias cadastradas e as suas informações, uma página de cadastro de informações de medicamentos e uma página para visualizar esses medicamentos. O sistema foi desenvolvido com front-end em React, e as informações de usuários, medicamentos e farmácias são armazenadas num arquivo de base de dados (data.json), que é lido através do simulador de servidor "json-server".
 
----
+# Utilização
 
 Para utilizar esse projeto, primeiramente clone esse repositório:
 
@@ -22,7 +22,7 @@ Rode o projeto
 npm run dev
 ```
 
----
+# Extras
 
 Em relação às funcionalidades extras e possíveis pontos de melhor, o projeto conta com:
 
