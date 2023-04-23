@@ -1,0 +1,60 @@
+{
+  "farmacias": [
+    {
+      "razaoSocial": "sfasf",
+      "cnpj": "11.111.111/1111-11",
+      "fantasia": "Douglas Fabris",
+      "email": "douglas.df1@gmail.com",
+      "telefone": "(48) 9981-6322",
+      "celular": "(11) 11111-1111",
+      "cep": "88040-001",
+      "logradouro": "Rua Deputado Antônio Edu Vieira",
+      "numero": "1422",
+      "bairro": "Pantanal",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "",
+      "latitude": "-27.6004276",
+      "longitude": "-48.516608",
+      "id": 1
+    },
+    {
+      "razaoSocial": "Farmacia sorriso",
+      "cnpj": "11.111.111/1111-11",
+      "fantasia": "Farmacia sorriso",
+      "email": "farmacia@farmacia.com",
+      "telefone": "",
+      "celular": "(11) 11111-1111",
+      "cep": "88010-290",
+      "logradouro": "Avenida Governador Gustavo Richard",
+      "numero": "20",
+      "bairro": "Centro",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "",
+      "latitude": "-27.604957",
+      "longitude": "-48.5477507",
+      "id": 2
+    }
+  ],
+  "medicamentos": [
+    {
+      "nome": "Omeprazol",
+      "laboratorio": "Nova química",
+      "dosagem": "10 mg",
+      "descricao": "",
+      "preco": "12,00",
+      "tipo": "comum",
+      "id": 1
+    },
+    {
+      "nome": "Ibuprofeno",
+      "laboratorio": "CIMED",
+      "dosagem": "600 mg",
+      "descricao": "Descrição genérica para tentar causar o overflow do card. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis dignissim neque, tristique elementum enim. Maecenas varius diam sapien, in.Cras vel mi nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris fermentum.",
+      "preco": "7,50",
+      "tipo": "comum",
+      "id": 2
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InputMask from "react-input-mask";
 import HeaderMain from "../components/HeaderMain";
 import Modal from "../components/Modal/Modal";
@@ -6,6 +6,7 @@ import "./Form.css";
 
 function CadastroFarmacia() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [submit, setSubmit] = useState(false);
   const [farmacia, setFarmacia] = useState({
     razaoSocial: "",
     cnpj: "",
@@ -24,6 +25,20 @@ function CadastroFarmacia() {
     longitude: "",
   });
 
+  useEffect(() => {
+    if (submit) {
+      fetch("http://localhost:3000/farmacias", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(farmacia),
+      });
+      setModalIsOpen(true);
+      setSubmit(false);
+    }
+  }, [submit]);
+
   function pesquisaCep(e) {
     if (!e.target.value) return;
     const cep = e.target.value.replace(/\D/, "");
@@ -41,13 +56,22 @@ function CadastroFarmacia() {
       .catch((error) => console.log(error));
   }
 
-  function HandleSubmit(e) {
-    e.preventDefault();
-    localStorage.setItem(
-      `far.${farmacia.razaoSocial}`,
-      JSON.stringify(farmacia)
+  async function enderecoLatLong() {
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/search/${farmacia.logradouro}+${farmacia.numero}+${farmacia.cidade}+Brasil?format=json`
     );
-    setModalIsOpen(true);
+    const data = await response.json();
+    setFarmacia((prevFarmacia) => ({
+      ...prevFarmacia,
+      latitude: data[0].lat,
+      longitude: data[0].lon,
+    }));
+    setSubmit(true);
+  }
+
+function HandleSubmit(e) {
+    e.preventDefault();
+    enderecoLatLong();
     Object.keys(farmacia).forEach((v) => {
       farmacia[v] = "";
     });
@@ -59,7 +83,7 @@ function CadastroFarmacia() {
       <div className="container">
         <Modal handleClose={() => setModalIsOpen(false)} isOpen={modalIsOpen} />
         <h2>Cadastro de nova farmácia</h2>
-        <form onSubmit={HandleSubmit}>
+        <form onSubmit={(e) => HandleSubmit(e)}>
           <fieldset className="form-grid">
             <legend>Informações de contato</legend>
             <label htmlFor="razaoSocial">
@@ -236,7 +260,7 @@ function CadastroFarmacia() {
                 }
               />
             </label>
-            <label htmlFor="latitude" style={{ flexBasis: "25%" }}>
+            {/* <label htmlFor="latitude" style={{ flexBasis: "25%" }}>
               Latitude
               <input
                 type="text"
@@ -259,7 +283,7 @@ function CadastroFarmacia() {
                   setFarmacia({ ...farmacia, longitude: e.target.value })
                 }
               />
-            </label>
+            </label> */}
           </fieldset>
           <button type="submit">Cadastrar</button>
         </form>

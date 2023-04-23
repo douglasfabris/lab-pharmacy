@@ -1,0 +1,14 @@
+.map {
+  display: block;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.leaflet-container {
+  width: 700px;
+  height: 450px;
+  margin: 20px auto;
+}
