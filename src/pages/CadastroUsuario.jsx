@@ -15,7 +15,7 @@ function CadastroUsuario() {
     fetch("http://localhost:3000/usuarios")
       .then((res) => res.json())
       .then((usuarios) => {
-        setListaUsuarios(usuarios.map((usuario) => usuario))
+        setListaUsuarios(usuarios.map((user) => user))
       })
   }, [])
 

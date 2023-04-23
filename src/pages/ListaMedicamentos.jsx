@@ -1,13 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import HeaderMain from "../components/HeaderMain";
-import CardMedicamento from "../components/CardMedicamento";
-import { LoginContext } from "../context/LoginContext";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import CardMedicamento from "../components/CardMedicamento"
+import { LoginContext } from "../context/LoginContext"
 
 function ListaMedicamentos() {
-  const [listaMedicamentos, setListaMedicamentos] = useState([]);
-  const [barraPesquisa, setBarraPesquisa] = useState("");
-  const {isLogged, setIsLogged} = useContext(LoginContext);
+  const [listaMedicamentos, setListaMedicamentos] = useState([])
+  const [barraPesquisa, setBarraPesquisa] = useState("")
+  const { isLogged, setIsLogged } = useContext(LoginContext)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -20,9 +19,9 @@ function ListaMedicamentos() {
     fetch("http://localhost:3000/medicamentos")
       .then((res) => res.json())
       .then((medicamentos) => {
-        setListaMedicamentos(medicamentos.map((medicamento) => medicamento));
-      });
-  }, []);
+        setListaMedicamentos(medicamentos.map((medicamento) => medicamento))
+      })
+  }, [])
 
   const filteredMed = listaMedicamentos.filter((el) => {
     if (barraPesquisa === "") return el
@@ -42,9 +41,7 @@ function ListaMedicamentos() {
             onChange={(e) => setBarraPesquisa(e.target.value.toLowerCase())}
           />
         </label>
-        <p>
-          Clique no medicamento para mais detalhes
-        </p>
+        <p>Clique no medicamento para mais detalhes</p>
         <div className="grid">
           {filteredMed.map((medicamento) => (
             <CardMedicamento medicamento={medicamento} key={medicamento.nome} />
@@ -52,7 +49,7 @@ function ListaMedicamentos() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ListaMedicamentos;
+export default ListaMedicamentos

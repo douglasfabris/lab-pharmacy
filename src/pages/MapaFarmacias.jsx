@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { useNavigate } from "react-router-dom"
 import "./Mapa-style.css"
 import FarmaciaPopup from "../components/FarmaciaPopup"
 import { LoginContext } from "../context/LoginContext"
-import { useNavigate } from "react-router-dom"
 
 function Mapa() {
   const [listaFarmacias, setListaFarmacias] = useState([])
