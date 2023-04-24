@@ -16,6 +16,12 @@ Instale a dependencias através do seguinte comando na pasta do projeto:
 npm install
 ```
 
+Inicie o servidor JSON para simular um banco de dados:
+
+```bash
+json-server --watch src/data/data.json
+```
+
 Rode o projeto
 
 ```bash
