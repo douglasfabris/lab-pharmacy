@@ -28,9 +28,13 @@ Em relação às funcionalidades extras e possíveis pontos de melhor, o projeto
 
 - Responsividade utilizando Flexbox e Grid Layout. Não foram utilizados frameworks externos, como bootstrap. No entanto alguns pontos precisam de melhoria, como a responsividade do mapa e da barra de navegação.
 
-- O dado do usuário logado fica guardo num estado no Context API, o que significa que ele não persiste caso a página seja atualizada. Para resolver esse problema, essa informação teria que ser guardada no próprio servidor ou no navegador (localStorage ou cookies, por exemplo)
+- A página de cadastro do usuário é uma funcionalidade extra, sendo cadastrado no arquivo data.json. Os cadastros são utilizados para realizar o login na página inicial.
 
-- O sistema de autentificação do usuário é feito através de um arquivo .db utilizando um fetch comum, sem nenhum tipo de criptografia. Esse sistema é extremamente inseguro, e foi utilizado somente para fins de demonstração nesse projeto.
+- O projeto conta com uma página que mostra a localização de todas as farmácias cadastradas em um mapa. As coordenadas do mapa são baseadas no endereço fornecido, sendo utilizado a API Nominatim para fazer a consulta à latitude e longitude.
+
+- O dado do usuário logado fica guardado num estado no Context API, o que significa que ele não persiste caso a página seja atualizada. Para resolver esse problema, essa informação teria que ser guardada no próprio servidor ou no navegador (localStorage ou cookies, por exemplo)
+
+- O sistema de autentificação do usuário é feito através de um arquivo de base de dados utilizando um fetch comum, sem nenhum tipo de criptografia. Esse sistema é extremamente inseguro, e foi utilizado somente para fins de demonstração nesse projeto.
 
 - O tratamento de erros das respostas da API deve ser melhorada, com aviso ao usuário do que ocorreu errado e possível solução. Atualmente, o projeto mostra o erro (se presente) no console do navegador.
 
