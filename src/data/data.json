@@ -53,6 +53,42 @@
       "latitude": "-27.5756981",
       "longitude": "-48.5303702",
       "id": 3
+    },
+    {
+      "razaoSocial": "Nova Farmacia",
+      "cnpj": "11.111.111/1111-11",
+      "fantasia": "Nova Farmacia",
+      "email": "farmacia@farmacia",
+      "telefone": "",
+      "celular": "(22) 22222-2222",
+      "cep": "88040-900",
+      "logradouro": "Rua Roberto Sampaio Gonzaga",
+      "numero": "512",
+      "bairro": "Trindade",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "",
+      "latitude": "-27.6006693",
+      "longitude": "-48.5206552",
+      "id": 4
+    },
+    {
+      "razaoSocial": "Farmacia famrcia",
+      "cnpj": "24.124.141/2421-4_",
+      "fantasia": "Farmacia farmacia",
+      "email": "email@farmacia.com",
+      "telefone": "",
+      "celular": "(22) 31313-1331",
+      "cep": "88010-400",
+      "logradouro": "Praça Quinze de Novembro",
+      "numero": "411",
+      "bairro": "Centro",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "complemento": "",
+      "latitude": "-27.59763875",
+      "longitude": "-48.54985804631796",
+      "id": 5
     }
   ],
   "medicamentos": [
@@ -100,18 +136,37 @@
       "preco": "7,52",
       "tipo": "comum",
       "id": 5
+    },
+    {
+      "nome": "Aspirina",
+      "laboratorio": "EMS",
+      "dosagem": "100 mg",
+      "descricao": "",
+      "preco": "8,00",
+      "tipo": "comum",
+      "id": 6
     }
   ],
   "usuarios": [
     {
-      "email": "senha@senha",
-      "senha": "asdasd24124",
+      "email": "email@email.com",
+      "senha": "senha1234",
       "id": 1
     },
     {
-      "email": "admin@admin",
-      "senha": "admin1234",
+      "email": "admin@admin.com",
+      "senha": "1234asdf",
       "id": 2
+    },
+    {
+      "email": "admin@admin.com",
+      "senha": "1234asdf",
+      "id": 3
+    },
+    {
+      "email": "email@exemplo.com",
+      "senha": "1234asdf",
+      "id": 4
     }
   ]
 }

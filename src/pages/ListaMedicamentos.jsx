@@ -44,7 +44,7 @@ function ListaMedicamentos() {
         <p>Clique no medicamento para mais detalhes</p>
         <div className="grid">
           {filteredMed.map((medicamento) => (
-            <CardMedicamento medicamento={medicamento} key={medicamento.nome} />
+            <CardMedicamento medicamento={medicamento} key={medicamento.id} />
           ))}
         </div>
       </div>
