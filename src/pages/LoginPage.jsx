@@ -74,6 +74,10 @@ function LoginPage() {
         <p style={{ color: "red", fontSize: "12px" }}>
           A senha deve possuir 8 caracteres contendo letras e números
         </p>
+        <p style={{ fontSize: "10px", paddingTop: "10px" }}>
+          Usuário padrão:email@email.com <br />
+          Senha padrão: senha1234
+        </p>
         <button type="submit">Login</button>
       </form>
     </div>
